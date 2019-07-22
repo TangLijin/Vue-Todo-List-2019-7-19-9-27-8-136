@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <Header></Header>
-    <Body></Body>
+    <Body :list="list" @push = "onPushTodoItem"></Body>
     <Footer></Footer>
     
   </div>
@@ -11,17 +11,47 @@
 import Header from "./components/Header";
 import Body from "./components/Body";
 import Footer from "./components/Footer";
+// import { resolve } from 'dns';
+
+let id = 0;
+  const getId = () => {
+    return id++;
+  }
 
 export default {
   name: 'app',
   // components: {
   //   HelloWorld
   // }
+  
   components: {
     Header,
     Body,
     Footer
+  },
+  data: function(){
+    return {
+      list:[]
+    }
+  },
+  props:{
+    list:{
+      type:Array,
+      default:()=>[]
+    }
+  },
+  methods: {
+    onPushTodoItem(value){
+      const item = {
+        value,
+        finished:false,
+        id:getId()
+      };
+      
+      this.list.push(item);
+    }
   }
+
 }
 </script>
 
@@ -34,10 +64,6 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
-
-
-
-
 
 
 

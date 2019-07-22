@@ -12,5 +12,11 @@ export default {
     //     return
     // },
     // methods:{}
+    props:{
+        list:{
+            type:Array,
+            default:()=>[]
+        }
+    }
 }
 </script>
