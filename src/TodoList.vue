@@ -1,24 +1,30 @@
 <template>
   <div id="app">
-  
-  <h2>Jquery To Do List</h2>
-  <p>Simple Todo List with adding and filter by diff status.</p>
-
-
-
+    <Header></Header>
+    <Body></Body>
+    <Footer></Footer>
+    
   </div>
 </template>
 
 <script>
-// import HelloWorld from './components/HelloWorld.vue'
+import Header from "./components/Header";
+import Body from "./components/Body";
+import Footer from "./components/Footer";
 
 export default {
   name: 'app',
   // components: {
   //   HelloWorld
   // }
+  components: {
+    Header,
+    Body,
+    Footer
+  }
 }
 </script>
+
 
 <style>
 #app {
