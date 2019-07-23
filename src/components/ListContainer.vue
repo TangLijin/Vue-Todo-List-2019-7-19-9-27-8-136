@@ -1,7 +1,7 @@
 <template>
     <div id="ListContainer">
         <ol class="todoList">
-            <li v-for="item in showFilteredTodoList" v-bind:key="item.number">
+            <li v-for="item in showFilteredTodoList" v-bind:key="item.id">
                 <todo-list-item   
                 :listItem="item"
                 @handle-select="handleSelectOperator"

@@ -17,7 +17,7 @@ export default {
         }
     },
     methods:{
-        handleClickAdd(){
+        handleClickAdd:function(){
             this.$emit("push",this.inputText);
             this.inputText = "";
         }
