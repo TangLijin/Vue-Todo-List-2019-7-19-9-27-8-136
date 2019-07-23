@@ -1,0 +1,69 @@
+body {
+    background-color: #ccc;
+    font: normal normal 13px/16px "Open Sans", sans-serif;
+}
+
+.homePage {
+    width: 600px;
+    background-color: white;
+    border-radius: 5px;
+    margin: 0 auto;
+    margin-top: 40px;
+    padding: 20px;
+}
+
+.inputText {
+    width: 70%;
+    padding: 4px 15px 4px 0;
+}
+
+.inputButton {
+    display: inline-block;
+    background-color: #fc999b;
+    padding: 5px 15px;
+    color: white;
+    border-radius: 5px;
+    margin-left: 5px;
+}
+
+.inputButton:hover {
+    cursor: pointer;
+    background-color: #fcaaac;
+}
+
+.todoList {
+    padding-left: 20px;
+}
+
+.todoList li {
+    padding: 5px;
+}
+
+.todoList li:nth-child(even) {
+    background-color: #f4ecec;
+}
+
+.filters {
+    margin-top: 40px;
+    margin-bottom: -10px;
+    color: #fc999b;
+    text-align: center;
+}
+
+.checkClass {
+    text-decoration-line: line-through;
+    color: #999;
+}
+
+.filters li {
+    display: inline-block;
+    list-style: none;
+    margin: 0 21px 0 21px;
+    padding: 3px;
+    cursor: pointer;
+}
+
+.filterButton {
+    border: 1px solid rgba(175, 47, 47, 0.1);
+    border-radius: 3px;
+}

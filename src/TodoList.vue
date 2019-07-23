@@ -1,9 +1,10 @@
 <template>
   <div id="app">
-    <Header></Header>
-    <Body :list="list" @push = "onPushTodoItem"></Body>
-    <Footer></Footer>
-    
+    <div class="homePage">
+      <Header></Header>
+      <Body :filterTodolistItem="filterTodolistItem"></Body>
+      <Footer @getChildStatus="getChildStatus"></Footer>
+    </div>
   </div>
 </template>
 
@@ -13,49 +14,31 @@ import Body from "./components/Body";
 import Footer from "./components/Footer";
 // import { resolve } from 'dns';
 
-let id = 0;
-  const getId = () => {
-    return id++;
-  }
 
 export default {
   name: 'app',
-  // components: {
-  //   HelloWorld
-  // }
-  
   components: {
     Header,
     Body,
     Footer
   },
-  data: function(){
+  data() {
     return {
-      list:[]
-    }
-  },
-  props:{
-    list:{
-      type:Array,
-      default:()=>[]
-    }
+      filterTodolistItem: (list) => list
+    };
   },
   methods: {
-    onPushTodoItem(value){
-      const item = {
-        value,
-        finished:false,
-        id:getId()
-      };
-      
-      this.list.push(item);
+    getChildStatus(filterTodolistItem){
+        this.filterTodolistItem = filterTodolistItem;
     }
+
+    
   }
 
 }
 </script>
 
-
+<!--
 <style>
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
@@ -69,3 +52,4 @@ export default {
 
 }
 </style>
+-->

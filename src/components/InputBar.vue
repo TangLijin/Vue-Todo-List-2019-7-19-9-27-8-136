@@ -1,8 +1,8 @@
 <template>
     <div id="InputBar">
         <span>
-            <input type="text" class="inputText" v-model="value" @keydown.enter="handleClickAdd">
-            <input type="button" value="Add" id="inputButton" @click="handleClickAdd">
+            <input type="text" class="inputText" v-model="inputText" @keydown.enter="handleClickAdd">
+            <input type="button" value="Add" class="inputButton" @click="handleClickAdd">
         </span>
     </div>
 </template>
@@ -13,17 +13,19 @@ export default {
     name:"InputBar",
     data:()=>{
         return {
-            value:""
+            inputText:""
         }
     },
     methods:{
         handleClickAdd(){
-            this.$emit("push",this.value);
+            this.$emit("push",this.inputText);
+            this.inputText = "";
         }
     }
 }
 </script>
 
+<!--
 <style>
     .inputText {
         width: 50%;
@@ -35,3 +37,4 @@ export default {
     }
 </style>
 
+-->
